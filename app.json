@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classify/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#292929",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "环球小镇",
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#6e6e6e",
+    "selectedColor": "#f9f027",
+    "borderStyle": "white",
+    "backgroundColor": "#292929",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "极速免税",
+        "iconPath": "images/footer-icon-01.png",
+        "selectedIconPath": "images/footer-icon-01-active.png"
+      },
+      {
+        "pagePath": "pages/classify/index",
+        "text": "分类",
+        "iconPath": "images/footer-icon-02.png",
+        "selectedIconPath": "images/footer-icon-02-active.png"
+      }
+    ]
+  },
+  "debug": true
+}

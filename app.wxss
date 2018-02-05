@@ -1,0 +1,14 @@
+@import "./style/layout.wxss";
+
+.container {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+page {
+  background-color: #f2f2f2;
+}
+

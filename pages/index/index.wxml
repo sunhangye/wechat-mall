@@ -1,0 +1,50 @@
+<view class="container">
+  <view>
+    <swiper class="slider_box" indicator-dots="{{indicatorDots}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" bindchange="{{swiperchange}}" duration="{{duration}}">
+      <block wx:for="{{images}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.picurl}}" class="slide-image"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="text">
+    <view class="line_flag"></view>
+    <text>主题馆</text>
+  </view>
+
+  <view class="venues_box">
+    <view class="venues_list">
+      <block wx:for="{{venuesItems}}" wx:key="venuesIndex">
+        <view class="venues_item">
+          <image src="{{item.smallpic}}"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="text">
+    <view class="line_flag"></view>
+    <text>环球精选</text>
+  </view>
+
+  <view class="choice_box">
+    <view class="choice_list">
+      <block wx:for="{{choiceItems}}" wx:key="choiceIndex">
+        <view class="choice_item">
+          <image src="{{item.choicepic}}" />
+          <view class="choice_price">
+            <view class="title">{{item.title}}</view>
+            <text class="our_price">小镇价：<text>￥{{item.ourprice}}.00</text> </text>
+            <text class="market_price">市场价：<text>￥{{item.marketprice}}.00</text></text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <loading hidden="{{loadingHidden}}">
+      加载中...
+    </loading>
+</view>
