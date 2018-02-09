@@ -1,4 +1,4 @@
-/** 
+/**
  *  获取小程序应用实例
 */
 var app = getApp()
@@ -44,11 +44,12 @@ Page({
       method: 'GET',
       success: (res) => {
         _that.setData({
-          images: res.data
+          images: res.data,
+          loadingHidden: true
         })
         setTimeout(function() {
           _that.setData({
-            loadingHidden: true
+
           })
         }, 500)
       }
@@ -64,11 +65,12 @@ Page({
       method: 'GET',
       success: (res) => {
         this.setData({
-          venuesItems: res.data.data
+          venuesItems: res.data.data,
+          loadingHidden: true
         })
         setTimeout(function () {
           _that.setData({
-            loadingHidden: true
+
           })
         }, 500)
       }
@@ -135,7 +137,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    console.log(options);
   }
 })

@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="page_bd">
+    <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" confirm-type="search" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="inputSearch"/>
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+  </view>
+  <view class="nav_left">
+    <block wx:for="{{navLeftItem}}">
+      <view class="nav_left_item {{curNav == item.id ? 'active' : ''}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="switchRightTab">
+        {{item.tree.desc}}
+      </view>
+    </block>
+  </view>
+  <view class="nav_right">
+    <view wx:if="{{navRightItem[curIndex].tree.nodes[0].tree.nodes}}">
+      <block wx:for="{{navRightItem[curIndex].tree.nodes[0].tree.nodes}}">
+        <view class="nav_right_item">
+          <block wx:if="{{item.tree.logo}}">
+            <image src="{{item.tree.logo}}"></image>
+          </block>
+          <block wx:else>
+            <image src="http://temp.im/50x30"></image>
+          </block>
+          <block wx:if="{{item.tree.desc2}}">
+            <text>{{item.tree.desc2}}</text>
+          </block>
+          <block wx:if="{{item.tree.desc}}">
+            <text>{{item.tree.desc}}</text>
+          </block>
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      暂无数据
+    </view>
+  </view>
+</view>

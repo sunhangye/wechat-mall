@@ -101,3 +101,7 @@ view.venues_box, view.choice_box {
  .choice_item .choice_price .market_price text {
     text-decoration: line-through;
  }
+
+ .other-navigator-hover {
+    background-color:red;
+}

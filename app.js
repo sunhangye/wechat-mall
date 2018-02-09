@@ -47,5 +47,7 @@ App({
    */
   onError: function (msg) {
     console.log(msg)
+  },
+  onShareAppMessage: function () {
   }
 })

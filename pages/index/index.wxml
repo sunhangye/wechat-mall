@@ -18,7 +18,9 @@
     <view class="venues_list">
       <block wx:for="{{venuesItems}}" wx:key="venuesIndex">
         <view class="venues_item">
-          <image src="{{item.smallpic}}"></image>
+          <navigator url="../brand/index?id={{item.id}}" hover-class="other-navigator-hover">
+            <image src="{{item.smallpic}}"></image>
+          </navigator>
         </view>
       </block>
     </view>
@@ -45,6 +47,6 @@
   </view>
 
   <loading hidden="{{loadingHidden}}">
-      加载中...
-    </loading>
+    加载中...
+  </loading>
 </view>

@@ -1,0 +1,16 @@
+<view class="container">
+   <block wx:for="{{brandList.brand}}">
+    <view class="brand_item">
+      <image class="pic" src="{{item.pic}}"></image>
+      <view class="right_cont">
+        <navigator url="../list/index?brand={{item.id}}&typeid={{item.id}}" hover-class="none">
+          <image class="logo" src="{{item.logo}}"></image>
+          <text wx:if="{{item.chinesename}}" class="name">{{item.chinesename}}</text>
+          <text wx:else="{{item.englishname}}" class="name">{{item.englishname}}</text>
+          <text class="brice">{{item.brice}}</text>
+          <text class="price">￥{{item.minprice}}/件起</text>
+        </navigator>
+      </view>
+    </view>
+   </block>
+</view>
